@@ -5,7 +5,7 @@ def create_report(data_file_name: str, report_file_name: str) -> None:
             operation_type, amount = line.split(",")
             if operation_type not in report:
                 report[operation_type] = 0
-            report[operation_type] += amount
+            report[operation_type] += int(amount)
 
     with open(report_file_name, "a") as report_file:
         for operation_type, amount in report.items():
